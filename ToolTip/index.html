@@ -42,6 +42,26 @@
         background-color: white;
         color: black;
     }
+    .main_image_sec{
+        display: flex;
+        justify-content: center;
+    }
+    .img_sec{
+        background-image: url('./icon/heart.png');
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+        cursor: pointer;
+    }
+    .whished_img_sec{
+        background-image: url('./icon/wished_heart.png');
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+        cursor: pointer;
+    }
 </style>
 
 <body style="text-align:center;">
@@ -49,17 +69,32 @@
     <h2>Tooltip</h2>
     <p>Move the mouse over the text below:</p>
 
-    <div class="tooltip">Hover over me
-        <span class="tooltiptext">
+    <div class="tooltip">
+        <div class="main_image_sec">
+            <div class="whished_img_sec img_sec" onclick="wishing(this)">
+    
+            </div>
+        </div>
+    
+        <div class="tooltiptext">
             Tooltip text
             <div>
                 <a href="" type="button" class="btn btn-primary">
                     View
                 </a>
             </div>
-        </span>
+        </div>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    // $(document).ready( function(){
 
+       function wishing(identifier){
+        $(identifier).toggleClass('whished_img_sec');
+       }
+
+    // });
+</script>
 </body>
 
 </html>
